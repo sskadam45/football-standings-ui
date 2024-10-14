@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.standing-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.standing-item p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.standing-item p strong {
+  color: #000;
+}
+
+.search-params {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;  /* Increased gap for better spacing */
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 15px;   /* Increased padding for a bigger touch area */
+  font-size: 18px; /* Larger font size for better readability */
+  border: 2px solid #ccc;
+  border-radius: 5px; /* Slightly larger border-radius for aesthetic */
+  width: 300px; /* Increased width */
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-input:focus {
+  border-color: #007bff; /* Bootstrap primary color for focus state */
+  outline: none; /* Removes the default focus outline */
+}
+
+.loader {
+  position: absolute;
+  top: 200px ;
+  ;left: 800px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

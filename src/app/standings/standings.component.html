@@ -1,0 +1,37 @@
+<!-- standings.component.html -->
+
+
+
+
+
+  <h1 class="header"> Football Standigs </h1>
+
+<div class="search-params">
+  <input type="text" class="search-input"  #countryName placeholder="Enter Country Name" (input)="search(countryName.value, leagueName.value, teamName.value)">
+  <input type="text" class="search-input" #leagueName placeholder="Enter League Name" (input)="search(countryName.value, leagueName.value, teamName.value)">
+  <input type="text" class="search-input" #teamName placeholder="Enter Team Name" (input)="search(countryName.value, leagueName.value, teamName.value)">
+</div>
+
+<br>
+<hr>
+@if (isLoading){
+  <div class="loader"></div>
+}
+@else {
+  @if (standingData && standingData.length > 0) {
+    @for (data of standingData; track data.team_id) {
+      <div class="standing-item">
+        <p><strong>Country ID & Name:</strong> ({{ data.country_id }}) - {{ data.country_name }}</p>
+        <p><strong>League ID & Name:</strong> ({{ data.league_id }}) - {{ data.league_name }}</p>
+        <p><strong>Team ID & Name:</strong> ({{ data.team_id }}) - {{ data.team_name }}</p>
+        <p><strong>Overall League Position:</strong> {{ data.overall_league_position }}</p>
+      </div>
+    }
+  } @else {
+      <p>No data available.</p>
+  }
+}
+
+
+
+<!-- Template for no data message -->
